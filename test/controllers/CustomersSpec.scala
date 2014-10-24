@@ -4,6 +4,8 @@ import play.api.http.MimeTypes
 import play.api.mvc.Controller
 import play.api.test._
 
+// TODO Working on
+/*
 class CustomersSpec extends PlaySpecification {
   object Customers extends Controller with Customers
 
@@ -28,4 +30,4 @@ class CustomersSpec extends PlaySpecification {
       (json \ "response").as[String] mustEqual "Failed to acquire your details - Contact customer support"
     }
   }
-}
+}*/

@@ -1,0 +1,129 @@
+#title {
+  font-style: oblique;
+  font-weight: bolder;
+}
+
+.banner {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.optional {
+  font-weight: normal !important;
+}
+
+.tooltip-inner {
+  max-width: 400px;
+}
+
+.xt-error {
+  border: 1px solid red;
+  color: red;
+}
+
+.radio-group {
+  padding-top: 15px;
+}
+
+.xt-error label {
+  color: black;
+}
+
+.xt-error:focus {
+  border: 1px solid red;
+  box-shadow: 0 0 2px red;
+}
+
+.nav > li > a {
+  cursor:pointer;
+}
+
+.has-error .form-control {
+    border-color: #D2322D;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-error .form-control:focus {
+  border-color: #D2322D;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #E88180;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #E88180;
+}
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline {
+  color: #D2322D;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.validation-summary {
+    background: #fef7f7;
+    border: 3px solid #df3034;
+    padding: 0em .7em;
+}
+
+.validation-summary ol a {
+    color: #D2322D;
+    text-decoration: none;
+}
+
+.valid-entry {
+  background: #fff url(/assets/img/green-tick.ico) no-repeat 99% center;
+  box-shadow: 0 0 5px #5cd053;
+  border-color: #28921f;
+}
+
+.invalid-text {
+  color: red;
+}
+
+.ovalMixin(@size:100px, @color:black) {
+  cursor: pointer;
+  width: @size;
+  height: @size/2;
+  background: @color;
+  //-moz-border-radius: @size/2 ~"/" @size/4;
+  //-webkit-border-radius: @size/2 ~"/" @size/4;
+  border-radius: @size/2 ~"/" @size/4;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.oval {
+  .ovalMixin(200px);
+}
+
+.oval a:link {
+  color: white;
+}
+
+/* visited link */
+.oval a:visited {
+  color: white;
+}
+
+/* mouse over link */
+.oval a:hover {
+  color: green;
+}
+
+/* selected link */
+.oval a:active {
+  color: orangered;
+}
+
+.not-in-view {
+  visibility: hidden;
+}
+
+.in-view {
+  visibility: visible;
+}

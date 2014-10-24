@@ -1,0 +1,51 @@
+<div>
+    <div class="banner" id="content">
+        <div class="container">
+            <h1>{{schema.properties.title.default}}</h1>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-sm-2">&nbsp;</div>
+
+            <div class="col-md-8" role="main">
+                <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+
+                <form xt-form id="form" role="form" name="form" novalidate="novalidate">
+                    <div class="form-group"
+                         data-ng-repeat="(key, property) in schema.properties"
+                         data-ng-if="property.description"
+                         data-ng-include="'/assets/partials/input/' + property.description + '.html'">
+                    </div>
+
+                    <button type="submit" class="btn btn-success" data-ng-disabled="form.$invalid || form.$pristine" data-ng-click="submit()">Submit</button>
+
+                    <!--<div class="bs-docs-section" data-ng-repeat="section in licenceDefinition.sections">
+                        <h1 id="{{section.id}}" class="page-header">{{$index + 1}}. {{section.name}}</h1>
+
+                        <p data-ng-init="noteId = section.note" data-ng-if="section.note" data-ng-include="'/assets/partials/examples/xt-components/note-link.html'"></p>
+
+                        <p data-ng-if="section.description">{{section.description}}</p>
+
+                        <div data-ng-repeat="subsection in section.subsections">
+                            <h3 id="{{subsection.id}}">{{subsection.name}}</h3>
+
+                            <p data-ng-init="noteId = subsection.note" data-ng-if="subsection.note" data-ng-include="'/assets/partials/examples/xt-components/note-link.html'"></p>
+
+                            <p data-ng-if="subsection.description">{{subsection.description}}</p>
+
+                            <div class="form-group" data-ng-repeat="component in subsection.components" data-ng-include="'/assets/partials/examples/xt-components/' + component.type + '.html'"></div>
+                        </div>
+
+                        <div class="form-group" data-ng-repeat="component in section.components" data-ng-include="'/assets/partials/examples/xt-components/' + component.type + '.html'"></div>
+
+                        <button type="submit" id="submitForm" class="btn btn-success" data-ng-if="$last" data-ng-click="submit()">{{licenceDefinition.submitLabel}}</button>
+                    </div>-->
+                </form>
+            </div>
+
+            <div class="col-sm-2">&nbsp;</div>
+        </div>
+    </div>
+</div>

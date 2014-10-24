@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html data-ng-app="app">
+    <head>
+        <title>Registered Traveller</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="fragment" content="!">
+
+        <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+
+        <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/assets/css/angularjs/ng-trans.min.css">
+        <link rel="stylesheet" href="/assets/css/angular-strap/angular-motion.min.css">
+        <link rel="stylesheet" href="/assets/css/angular-strap/bootstrap-additions.min.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap/docs.min.css">
+        <link rel="stylesheet" href="/assets/css/toaster.css">
+        <link rel="stylesheet" media="screen" href="/assets/css/app.css">
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse navbar-fixed-top" id="top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a href="/" class="navbar-brand">Registered Traveller</a>
+                </div>
+
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a data-ng-href="#/register/eligibility">Register</a></li>
+                        <li><a data-ng-href="#/registered/login">Already Registered?</a></li>
+                        <li><a data-ng-href="#/contact">Contact Us</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="https://www.gov.uk/">
+                                <img data-ng-src="/assets/img/gov-uk.png" width="26" height="22" alt="Go to the GOV.UK homepage"> GOV.UK
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div ui-view></div>
+
+        <footer class="bs-docs-footer" role="contentinfo">
+            <div class="container">
+                <p>Designed and built by <a href="https://www.gov.uk/government/organisations/home-office" target="_blank">Copyright &copy; Government Home Office</a></p>
+            </div>
+        </footer>
+
+        <script src="/assets/js/vendor/jquery/jquery-1.11.0.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/angularjs/angular.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/angularjs/angular-resource.min.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/angularjs/angular-animate.min.js"></script>
+        <script src="/assets/js/vendor/angularjs/angular-ui-router.js"></script>
+        <script src="/assets/js/vendor/angularjs/ui-bootstrap-tpls-0.10.0.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/angular-strap/angular-strap.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/angular-strap/angular-strap.tpl.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/xt-form-custom-2.js" type="text/javascript"></script>
+        <script src="/assets/js/vendor/toaster.js" type="text/javascript"></script>
+
+        <!-- CoffeeScript compiled resources -->
+        <script src="/assets/js/app.js" type="text/javascript"></script>
+        <script src="/assets/js/factories/Scroller.js" type="text/javascript"></script>
+        <script src="/assets/js/factories/Schemas.js" type="text/javascript"></script>
+        <script src="/assets/js/factories/Customers.js" type="text/javascript"></script>
+        <script src="/assets/js/directives/InputAttributes.js" type="text/javascript"></script>
+        <script src="/assets/js/controllers/RegisterController.js" type="text/javascript"></script>
+        <script src="/assets/js/controllers/CustomersController.js" type="text/javascript"></script>
+        <script src="/assets/js/controllers/MakePaymentController.js" type="text/javascript"></script>
+        <script src="/assets/js/controllers/SinglePageFormController.js" type="text/javascript"></script>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
+        <script src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js'></script>
+        <![endif]-->
+    </body>
+</html>

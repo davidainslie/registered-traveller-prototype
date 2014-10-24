@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "register",
+    "description": "Register",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["eligible"],
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "eligible": {
+            "type": "string",
+            "title": "Were you a member of the UK IRIS scheme?",
+            "enum": ["yes", "no"],
+            "description": "radio"
+        },
+        "travel": {
+            "type": "object",
+            "title": "Travel",
+            "properties": {
+                "nationality": {
+                    "type": "string",
+                    "enum": ["Australia", "Canada", "Japan", "New Zealand", "U.S.A"],
+                    "title": "What is your nationality as stated on your passport?",
+                    "description": "select"
+                },
+                "frequencyAchieved": {
+                    "type": "string",
+                    "title": "Have you travelled to the UK 4 times or more in the last 52 weeks?",
+                    "enum": ["yes", "no"],
+                    "description": "radio"
+                },
+                "entrance": {
+                    "type": "string",
+                    "title": "Which of the following visas or residents permits do you currently hold for the UK?",
+                    "enum": ["R", "T1T", "T1E", "T1I", "T2V"],
+                    "description": "select"
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "eligible": {
+            "oneOf": [{
+                "properties": {
+                    "eligible": {
+                        "enum": ["no"]
+                    }
+                },
+                "not": { "required": ["travel"] }
+            }, {
+                "properties": {
+                    "eligible": {
+                        "enum": ["yes"]
+                    }
+                },
+                "required": ["travel"]
+            }]
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<div class="bs-docs-section ng-scope">
+    <h1 class="page-header">1. Travel</h1>
+
+    <div class="form-group">
+        <label id="nationality-label" for="nationality">What is your nationality as stated on your passport?</label>
+
+        <select xt-validate class="form-control" id="nationality" name="nationality" data-ng-model="formData.travel.nationality" required
+                data-ng-options="n for n in ['Australia', 'Canada', 'Japan', 'New Zealand', 'United States of America', 'None of the above']">
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label id="travel-frequency-achieved-label">Have you travelled to the UK 4 times or more in the last 52 weeks?</label>
+
+        <div>
+            <div class="radio-inline">
+                <label id="travel-frequency-achieved-0-label" class="control-label" for="travel-frequency-achieved-0">
+                    <input xt-validate type="radio" id="travel-frequency-achieved-0" name="travel-frequency-achieved-0" value="yes" data-ng-model="formData.travel.frequencyAchieved" required>
+                    Yes
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="travel-frequency-achieved-1-label" class="control-label" for="travel-frequency-achieved-1">
+                    <input xt-validate type="radio" id="travel-frequency-achieved-1" name="travel-frequency-achieved-1" value="no" data-ng-model="formData.travel.frequencyAchieved" required>
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label id="entrance-label" for="entrance">Which of the following visas or residents permits do you currently hold for the UK?</label>
+
+        <select xt-validate class="form-control" id="entrance" name="entrance" data-ng-model="formData.travel.entrance" required
+                data-ng-options="k as v for (k, v) in entrances">
+        </select>
+    </div>
+</div>
+
+<button type="submit" class="btn btn-success" data-ng-click="submit()">Submit</button>
+
+
+
+

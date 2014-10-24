@@ -1,0 +1,51 @@
+<div>
+    <label data-ng-if="property.title" id="{{key}}-label" for="{{key}}">{{property.title}}<i data-ng-hide="required" class="optional"> (optional)</i></label>
+
+    <p class="form-hint" data-ng-if="property.hints" data-ng-repeat="hint in property.hints">{{hint}}</p>
+
+    <select id="{{key}}" input-attributes>
+        <option data-ng-repeat="option in property.enum" value="{{option}}">{{option}}</option>
+    </select>
+</div>
+
+<!--
+data-ng-model="component.model"
+            data-ng-options="option.value as option.label for option in component.options"
+            data-ng-required="{{component.validations.required}}"
+
+
+"maximum": {
+            "type": "number"
+        },
+        "exclusiveMaximum": {
+            "type": "boolean",
+            "default": false
+        },
+        "minimum": {
+            "type": "number"
+        },
+        "exclusiveMinimum": {
+            "type": "boolean",
+            "default": false
+        },
+        "maxLength": { "$ref": "#/definitions/positiveInteger" },
+        "minLength": { "$ref": "#/definitions/positiveIntegerDefault0" },
+        "pattern": {
+            "type": "string",
+            "format": "regex"
+        }
+
+<div>
+    <label data-ng-if="property.label" id="{{input}}Label" for="{{input}}">{{property.label}}<i data-ng-hide="required" class="optional"> (optional)</i></label>
+
+    <p class="form-hint" data-ng-if="property.hints" data-ng-repeat="hint in property.hints">{{hint}}</p>
+
+    <select
+        xt-validate
+        class="form-control"
+        id="{{input}}"
+        name="{{input}}"
+        properties>
+            <option data-ng-repeat="option in property.enum" value="{{option}}">{{option}}</option>
+    </select>
+</div>-->

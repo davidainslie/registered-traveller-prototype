@@ -11,12 +11,12 @@ class RegisterSpec extends Specification with WebServerEmbedded with WebBrowserE
     As a new customer
     I must provide the required criteria
 
-      Scenario: I pass all the required criteria                    ${ Step(startServer()) }
-        Given the "Eligibility" check                               $s1
-        When I "continue" since I am eligible                       $s2
-        And provide all remaining required information              $s3
-        Then I should be given a confirmation                       $s4
-                                                                    ${ Step(stopServer()) }"""
+      Scenario: I pass all the required criteria                        ${ Step(startServer()) }
+        Given the "Eligibility" check                                   $s1
+        When I "continue" since I am eligible                           $s2
+        And provide all remaining required information                  $s3
+        Then I should be registered and given a confirmation            $s4
+                                                                        ${ Step(stopServer()) }"""
 
   def s1 = {
     browser goTo "#/register/eligibility"

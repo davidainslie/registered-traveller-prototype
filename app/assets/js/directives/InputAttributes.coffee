@@ -6,12 +6,11 @@
     element.attr "class", "form-control"
     element.attr "data-ng-model", "formData.#{attrs.id}"
 
+    for directive in scope.property.description.split(" ")[1 ..]
+      element.attr directive, ""
+
 
     ###
-
-
-
-
     fullKey = scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").replace(/\//g, "//")
 
     propertyModel = "data." + scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").substring(1).replace(/\//g, ".")

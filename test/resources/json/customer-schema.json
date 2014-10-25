@@ -17,12 +17,12 @@
         "name": {
             "type": "string",
             "title": "Name",
-            "description": "input"
+            "description": "text"
         },
         "dateOfBirth": {
             "type": "string",
             "title": "Date of Birth",
-            "description": "input",
+            "description": "text",
             "pattern": "/^(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-[0-9]{4}$/"
         }
     }

@@ -1,7 +1,7 @@
 <div>
     <div class="banner" id="content">
         <div class="container">
-            <h1>{{schema.properties.title.default}}</h1>
+            <h1>{{schema.description}}</h1>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
                     <div class="form-group"
                          data-ng-repeat="(key, property) in schema.properties"
                          data-ng-if="property.description"
-                         data-ng-include="'/assets/partials/input/' + property.description + '.html'">
+                         data-ng-include="'/assets/partials/input/' + inputType(property) + '.html'">
                     </div>
 
                     <button type="submit" class="btn btn-success" data-ng-disabled="form.$invalid || form.$pristine" data-ng-click="submit()">Submit</button>

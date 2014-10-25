@@ -44,6 +44,10 @@
 
     $delegate
 
+@app.run ($rootScope) ->
+  $rootScope.inputType = (property) ->
+    property.description.split(" ")[0]
+
 @app.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise("/home")
 

@@ -1,4 +1,4 @@
-@app.directive "capitalise", ->
+@app.directive "uppercase", ->
   require: "ngModel"
 
   link: (scope, element, attrs, modelCtrl) ->

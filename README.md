@@ -13,6 +13,8 @@ Application built with the following (main) technologies:
 
 - AngularJS 1.2.16
 
+- Reactivemongo 0.10.5
+
 Introduction
 ------------
 
@@ -93,8 +95,8 @@ Acceptance testing - Contained in one file so no disparity errors. Both business
 
 Play allows for embedded services allowing acceptance tests to behaviour and run as unit tests.
 
-AngularJS Benefits
-------------------
+AngularJS - Benefits
+--------------------
 
 https://angularjs.org/
 

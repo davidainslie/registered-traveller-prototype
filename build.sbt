@@ -4,7 +4,7 @@ import play.PlayScala
 
 name := "registered-traveller-prototype"
 
-organization := "home.office.gsi.gov.uk"
+organization := "kissthinker"
 
 version := "1.0-SNAPSHOT"
 

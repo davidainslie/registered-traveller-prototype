@@ -14,8 +14,8 @@
 
                 <form xt-form id="form" role="form" name="form" novalidate="novalidate">
                     <div class="form-group"
-                         data-ng-repeat="property in xxx()"
-                         data-ng-if="isInput(property)"
+                         data-ng-repeat="property in schemaProperties"
+                         data-ng-if="property.description"
                          data-ng-include="'/assets/partials/input/' + inputType(property) + '.html'">
                     </div>
 

@@ -44,28 +44,6 @@
 
     $delegate
 
-    ###
-    var foo = "bar";
-    var ob  = {};
-    ob[foo] = "something"; // === ob.bar = "something"
-
-
-    JSPath.apply(".properties.*", json) if json
-
-    values =
-      name: "misko"
-      gender: "male"
-
-    log = []
-    angular.forEach values, ((value, key) ->
-      @push key + ": " + value
-      return
-    ), log
-    expect(log).toEqual [
-      "name: misko"
-      "gender: male"
-    ]###
-
 @app.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise("/home")
 

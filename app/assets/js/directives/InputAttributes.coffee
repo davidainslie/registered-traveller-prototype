@@ -8,7 +8,7 @@
     element.attr "class", "form-control"
     element.attr "data-ng-model", "formData.#{attrs.id}"
 
-    for directive in JSPath.apply("..description", scope.property)[0].split(" ")[1 ..]
+    for directive in scope.property.description.split(" ")[1 ..]
       element.attr directive, ""
 
 

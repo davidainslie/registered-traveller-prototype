@@ -13,32 +13,22 @@
       $scope.formData = success.data if success.data
       console.log("Form data acquired = #{angular.toJson($scope.formData)}")
 
-      angular.forEach $scope.schema.properties, ((value, key) ->
+      angular.forEach $scope.schema.properties,
+        ((value, key) ->
           property = {}
-          property[key] = value
-          console.log "THE KEY = #{key}"
+          property["id"] = key
+
+          for p of value
+            property[p] = value[p]
 
           @push property),
         $scope.schemaProperties
-
-      console.log "SET PROPERITIES"
 
     (exception) ->
       console.error exception
       $modal({ title: "Customer Details Acquisition Failure", content: "#{$stateParams.id}: #{exception.data.response}", animation: "am-fade-and-scale" }))
 
   #$scope.evalModel = (model) -> $scope.$eval("formData." + model)
-
-  $scope.isInput = (property) ->
-    JSPath.apply("..description", property).length > 0
-
-  $scope.inputType = (property) ->
-    console.log JSPath.apply("..description", property)
-    JSPath.apply("..description", property)[0].split(" ")[0] if $scope.isInput(property)
-
-  $scope.xxx = ->
-    console.log "GETTING PROPERITIES #{angular.toJson($scope.schemaProperties)}"
-    $scope.schemaProperties
 
   $scope.submit = ->
     if ($scope.form.$valid)
@@ -68,3 +58,6 @@
 
       Scroller.scrollToLabel($("#form").find(".ng-invalid")[0].getAttribute("id"))
       toaster.pop("error", "Update Failure", "Amend update errors (including required missing data).", 5000, "trustedHtml")
+
+  $scope.inputType = (property) ->
+    property.description.split(" ")[0] if property.description

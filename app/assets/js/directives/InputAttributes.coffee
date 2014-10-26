@@ -1,12 +1,14 @@
 @app.directive "inputAttributes", ($compile) ->
   restrict: "A"
   link: (scope, element, attrs) ->
+    console.log "===> #{angular.toJson(scope.property)}"
+
     element.attr "xt-validate", ""
     element.attr "name", scope.key
     element.attr "class", "form-control"
     element.attr "data-ng-model", "formData.#{attrs.id}"
 
-    for directive in scope.property.description.split(" ")[1 ..]
+    for directive in JSPath.apply("..description", scope.property)[0].split(" ")[1 ..]
       element.attr directive, ""
 
 

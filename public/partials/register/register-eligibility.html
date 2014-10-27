@@ -1,23 +1,11 @@
 <div class="bs-docs-section">
-    <h1 class="page-header">Eligibility</h1>
+    <h1 class="page-header">Section 1 of 8</h1>
 
     <div class="form-group">
-        <label id="eligible-label">Were you a member of the UK IRIS scheme?</label>
-
         <div>
-            <div class="radio-inline">
-                <label id="eligible-yes-label" class="control-label" for="eligible-yes">
-                    <input xt-validate type="radio" id="eligible-yes" name="eligible-yes" value="yes" data-ng-model="formData.eligible" required>
-                    Yes
-                </label>
-            </div>
+            <label id="invitation-code-label" for="invitation-code">Enter your invitation code</label>
 
-            <div class="radio-inline">
-                <label id="eligible-no-label" class="control-label" for="eligible-no">
-                    <input xt-validate type="radio" id="eligible-no" name="eligible-no" value="no" data-ng-model="formData.eligible" required>
-                    No
-                </label>
-            </div>
+            <input xt-validate type="text" class="form-control" id="invitation-code" data-ng-model="formData.invitationCode" required data-ng-minLength="12" data-ng-maxLength="13" uppercase>
         </div>
     </div>
 </div>
@@ -25,12 +13,6 @@
 <div class="row">
     <div class="col-md-2">
         &nbsp;<br/>
-        <button data-ng-click="continue('register.particulars')" class="btn btn-success" data-ng-disabled="form.$invalid || notEligible()">Continue</button>
-    </div>
-
-    <div class="col-md-10" data-ng-class="{ 'in-view': form.$dirty && notEligible(), 'not-in-view': form.$pristine || eligible() }">
-        <h3>Sorry, you can’t join the Registered Traveller Service.</h3>
-        This is because:<br/>
-        At present the pilot service is only open to people who were members of the UK IRIS scheme. Check who qualifies for the Registered Traveller Service from time to time.
+        <button data-ng-click="continue('register.particulars')" class="btn btn-success" data-ng-disabled="form.$invalid">Continue</button>
     </div>
 </div>

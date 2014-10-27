@@ -140,6 +140,8 @@ https://angularjs.org/
 
 - Built in support for TDD
 
+- Chrome browser AngularJS plugin to aid development/debugging
+
 - Like all front end libraries with JavaScript, there is natural load balancing of a web application e.g. caching a form until it is ready and reducing remote communications
 
 NOTE (again) that hard coded HTML is fine as the JSON schema defines "the contract" regarding front and back ends and with the business, as again it is a file that the business can read.

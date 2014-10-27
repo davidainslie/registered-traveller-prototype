@@ -1,6 +1,7 @@
 @app.controller "CustomersController", ($scope, $state, $stateParams, $modal, $window, toaster, Scroller, Customers) ->
   #$scope.evaluateModel = true
 
+  # TODO Extract "schema", "schemaProperties" and construction of these into a "factory"
   $scope.schema = {}
   $scope.schemaProperties = []
   $scope.formData = {}
@@ -29,6 +30,10 @@
       $modal({ title: "Customer Details Acquisition Failure", content: "#{$stateParams.id}: #{exception.data.response}", animation: "am-fade-and-scale" }))
 
   #$scope.evalModel = (model) -> $scope.$eval("formData." + model)
+
+  # TODO Again, not a good place for this.
+  $scope.requiredProperty = (property) ->
+    property.id in JSPath.apply("..required", $scope.schema)
 
   $scope.submit = ->
     if ($scope.form.$valid)

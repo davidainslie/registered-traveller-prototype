@@ -1,8 +1,6 @@
 @app.directive "inputAttributes", ($compile) ->
   restrict: "A"
   link: (scope, element, attrs) ->
-    console.log "===> #{angular.toJson(scope.property)}"
-
     element.attr "xt-validate", ""
     element.attr "name", scope.key
     element.attr "class", "form-control"

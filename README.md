@@ -67,6 +67,8 @@ https://typesafe.com/
 
 - Built in design patterns and encourages good code practices for better maintenance and scalability of applications including functional programming, immutable data, and easier safer concurrency.
 
+Case studies at https://typesafe.com/company/casestudies
+
 Play - Benefits
 ---------------
 
@@ -113,6 +115,8 @@ https://angularjs.org/
 - Easy interaction with RESTful services
 
 - Built in support for TDD
+
+- Like all front end libraries with JavaScript, there is natural load balancing of a web application e.g. caching a form until it is ready and reducing remote communications
 
 NOTE (again) that hard coded HTML is fine as the JSON schema defines "the contract" regarding front and back ends and with the business, as again it is a file that the business can read.
 Synchronising front and back ends is still straightforward compared to the usual layered applications and security is not compromised as all rules that are defined by the schema are used by the backend.

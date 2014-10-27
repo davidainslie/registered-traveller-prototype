@@ -54,6 +54,30 @@ OR if you want to see the code in Intellij, as well as run it:
 
 Hopefully all (unit) "specs" will pass and you can now open up IntelliJ and start going through the specs and code.
 
+Application - Run
+-----------------
+
+This prototype runs against a Mongodb configured for "localhost" on default port 27017.
+At the moment there are not "environment" configurations e.g. there is only application.conf and so still to do the likes of application.local.conf etc.
+
+To run the application, seed a locally running Mongodb by doing the following:
+
+> $ cd registered-traveller-prototype
+
+> $ cd mongo
+
+> $ ./schemas-seed.sh
+
+Then run the application:
+
+> $ cd registered-traveller-prototype
+
+> $ activator
+
+> [registered-traveller-prototype] run
+
+And open a browser to localhost:9000
+
 Scala - Benefits
 ----------------
 

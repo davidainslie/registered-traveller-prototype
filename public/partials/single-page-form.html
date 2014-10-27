@@ -20,28 +20,6 @@
                     </div>
 
                     <button type="submit" class="btn btn-success" data-ng-disabled="form.$invalid || form.$pristine" data-ng-click="submit()">Submit</button>
-
-                    <!--<div class="bs-docs-section" data-ng-repeat="section in licenceDefinition.sections">
-                        <h1 id="{{section.id}}" class="page-header">{{$index + 1}}. {{section.name}}</h1>
-
-                        <p data-ng-init="noteId = section.note" data-ng-if="section.note" data-ng-include="'/assets/partials/examples/xt-components/note-link.html'"></p>
-
-                        <p data-ng-if="section.description">{{section.description}}</p>
-
-                        <div data-ng-repeat="subsection in section.subsections">
-                            <h3 id="{{subsection.id}}">{{subsection.name}}</h3>
-
-                            <p data-ng-init="noteId = subsection.note" data-ng-if="subsection.note" data-ng-include="'/assets/partials/examples/xt-components/note-link.html'"></p>
-
-                            <p data-ng-if="subsection.description">{{subsection.description}}</p>
-
-                            <div class="form-group" data-ng-repeat="component in subsection.components" data-ng-include="'/assets/partials/examples/xt-components/' + component.type + '.html'"></div>
-                        </div>
-
-                        <div class="form-group" data-ng-repeat="component in section.components" data-ng-include="'/assets/partials/examples/xt-components/' + component.type + '.html'"></div>
-
-                        <button type="submit" id="submitForm" class="btn btn-success" data-ng-if="$last" data-ng-click="submit()">{{licenceDefinition.submitLabel}}</button>
-                    </div>-->
                 </form>
             </div>
 

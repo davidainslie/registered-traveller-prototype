@@ -17,7 +17,7 @@ trait Customers extends MongoController {
   this: Controller =>
 
   /** TODO To cache and avoid contant datastore interaction, just make the following a "val" */
-  def customerSchema: Future[Option[JsValue]] = schemasCollection.find(Json.obj("id" -> "customerTemp")).one[JsValue]
+  def customerSchema: Future[Option[JsValue]] = schemasCollection.find(Json.obj("id" -> "customer")).one[JsValue]
 
   val validateCustomer: Future[JsValue => Try[JsValue]] = {
     customerSchema.collect {

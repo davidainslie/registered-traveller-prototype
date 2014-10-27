@@ -4,6 +4,7 @@
     "description": "Customer",
     "type": "object",
     "additionalProperties": false,
+    "required": ["name", "dateOfBirth"],
     "properties": {
         "id": {
             "type": "string"

@@ -80,7 +80,12 @@ trait Customers extends MongoController {
 
     validateCustomer.flatMap {
       _(request.body).map { customer =>
-        Future.successful(Ok(Json.obj("_id" -> BSONObjectID.generate)))
+        val id = (customer \ "id").as[String]
+
+        customersCollection.save(customer).map { _ =>
+          Logger.info(s"Updated customer with id: $id")
+          Ok(Json.obj("response" -> s"""Successful update"""))
+        }
       }.getOrElse {
         Future.successful(BadRequest(Json.obj("_id" -> BSONObjectID.generate, "response" -> "Failed to update your details")))
       }

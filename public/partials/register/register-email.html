@@ -1,0 +1,30 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 7 of 8</h1>
+
+    <div class="form-group">
+        <div>
+            <label id="email-label" for="email">What is your email address?</label>
+
+            <input xt-validate type="email" class="form-control" id="email"
+                   data-ng-model="formData.email" required data-ng-minLength="3"
+                   data-ng-maxLength="23" equals="{{formData.emailConfirm}}">
+        </div>
+
+        <div data-ng-hide="emailsCorrelate()" class="text-danger">Email and confirm email must be the same</div>
+        <div data-ng-show="emailsCorrelate()">&nbsp;</div>
+
+        <br/>
+
+        <label id="email-confirm-label" for="email-confirm">Confirm your email</label>
+
+        <input xt-validate type="email" class="form-control" id="email-confirm"
+               data-ng-model="formData.emailConfirm" required data-ng-minLength="3"
+               data-ng-maxLength="23" equals="{{formData.email}}">
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="go('register.summary', true)" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

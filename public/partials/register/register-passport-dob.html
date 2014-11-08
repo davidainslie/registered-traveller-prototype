@@ -1,0 +1,63 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 6 of 8</h1>
+
+    <div class="form-group">
+        <label id="register-passport-dob-label" name="register-passport-dob-label">What is your date of birth as stated on your passport?</label>
+
+        <br>
+
+        <label id="dob-day-label" name="dob-day-label" class="control-label" for="dob-day"> Day
+            <input xt-validate type="text" class="form-control" id="dob-day" name="dob-day" data-ng-model="formData.passport.passportDobDay"
+                   data-ng-length="2" class="ddinput" size="2" maxlength="2" required only-digits data-ng-minLength="2" key-focus
+                   data-ng-change="validateDOB(formData.passport.passportDobDay,formData.passport.passportDobMonth,formData.passport.passportDobYear)" />
+        </label>
+
+        <label id="dob-month-label" name="dob-month-label" class="control-label" for="dob-month"> Month
+            <input xt-validate type="text" class="form-control" id="dob-month" name="dob-month" data-ng-model="formData.passport.passportDobMonth"
+                   data-ng-length="2" class="ddinput" size="2" maxlength="2" required only-digits data-ng-minLength="2" key-focus
+                   data-ng-change="validateDOB(formData.passport.passportDobDay,formData.passport.passportDobMonth,formData.passport.passportDobYear)"  />
+        </label>
+
+        <label id="dob-year-label" name="dob-year-label" class="control-label" for="dob-year"> Year
+            <input xt-validate type="text" class="form-control" id="dob-year" name="dob-year" data-ng-model="formData.passport.passportDobYear"
+                   data-ng-length="2" class="yyyyinput" size="4" maxlength="4" required only-digits data-ng-minLength="4" key-focus
+                   ng-change="validateDOB(formData.passport.passportDobDay,formData.passport.passportDobMonth,formData.passport.passportDobYear)" />
+        </label>
+
+        <span data-ng-show="dateValidationError" class="text-danger">{{dateValidationError}}</span>
+    </div>
+
+
+    <div class="form-group">
+        <label id="gender" name="gender">What is your gender as it appears on your passport?</label>
+
+        <div>
+            <div class="radio-inline">
+                <label id="gender-0-label" name="gender-0-label" class="control-label" for="gender-0">
+                    <input xt-validate type="radio" id="gender-0" name="gender-0" value="M" data-ng-model="formData.travel.passport.gender" required>
+                    Male
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="gender-1-label" name="gender-1-label" class="control-label" for="gender-1">
+                    <input xt-validate type="radio" id="gender-1" name="gender-1" value="F" data-ng-model="formData.travel.passport.gender" required>
+                    Female
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="gender-2-label" name="gender-2-label" class="control-label" for="gender-2">
+                    <input xt-validate type="radio" id="gender-2" name="gender-2" value="U" data-ng-model="formData.travel.passport.gender" required>
+                    Unspecified
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="go('register.email', true)" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

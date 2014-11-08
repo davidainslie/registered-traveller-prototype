@@ -1,0 +1,56 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 5 of 8</h1>
+
+    <div class="form-group">
+        <label id="full-name-label" name="full-name-label">What is your full name as it appears on your passport?</label>
+
+        <div>
+            <label id="surname-label" name="surname-label" for="surname">Surname</label>
+            <input xt-validate type="text" id="surname" name="surname" class="form-control" data-ng-model="formData.passport.surname" data-ng-minLength="1" data-ng-maxLength="50" data-ng-pattern="/^[A-Z' -]+$/" uppercase required>
+        </div>
+
+        <div>
+            <div>&nbsp;</div>
+            <label id="given-names-label" name="given-names-label" for="given-names">Given names (include any middle names)</label>
+            <input xt-validate type="text" id="given-names" name="given-names" class="form-control" data-ng-model="formData.passport.givenNames" data-ng-minLength="1" data-ng-maxLength="50" data-ng-pattern="/^[A-Z' -]+$/" uppercase required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label id="known-by-other-names" name="known-by-other-names">Have you ever been officially or legally known by another name?</label>
+
+        <div>
+            <div class="radio-inline">
+                <label id="known-by-other-names-0-label" name="known-by-other-names-0-label" class="control-label" for="known-by-other-names-0">
+                    <input xt-validate type="radio" id="known-by-other-names-0" name="known-by-other-names-0" value="yes" data-ng-model="formData.passport.knownByOtherNames" required>
+                    Yes
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="known-by-other-names-1-label" name="known-by-other-names-1-label" class="control-label" for="known-by-other-names-1">
+                    <input xt-validate type="radio" id="known-by-other-names-1" name="known-by-other-names-1" name="known-by-other-names-1" value="no" data-ng-model="formData.passport.knownByOtherNames" required>
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-init = "formData.passport.previousSurnames=[]; formData.passport.previousGivenNames=[]" data-ng-repeat="i in [1,2,3,4,5,6,7,8,9]" data-ng-show="formData.passport.knownByOtherNames == 'yes'">
+        <div>
+            <label id="surname-label-{{i}}" name="surname-label-{{i}}" for="surname-{{i}}">Surname</label>
+            <input xt-validate type="text" class="form-control" id="surname-{{i}}" name="surname-{{i}}" data-ng-model="formData.passport.previousSurnames[i]" data-ng-minLength="1" data-ng-maxLength="50" data-ng-pattern="/^[A-Z' -]+$/" uppercase>
+
+            <br>
+
+            <label id="given-names-label-{{i}}" name="given-names-label-{{i}}" for="given-names-{{i}}">Given names (include any middle names)</label>
+            <input xt-validate type="text" class="form-control" id="given-names-{{i}}" name="given-names-{{i}}" data-ng-model="formData.passport.previousGivenNames[i]" data-ng-minLength="1" data-ng-maxLength="50" data-ng-pattern="/^[A-Z' -]+$/" uppercase>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="validatePassportNames('register.passport-dob')" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

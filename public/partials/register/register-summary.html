@@ -1,0 +1,123 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Summary</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="invitation-code-label">Invitation code</label>
+            {{formData.invitationCode}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="nationality-label">Nationality</label>
+            {{formData.travel.nationality}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="frequency-label">Have travelled more than 4 times in the last 52 weeks?</label>
+            {{formData.travel.frequencyAchieved}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <span ng-if="formData.travel.entrance != 'none'">
+                <label id="travel-entrance-label">You hold this visa or resident's permit:</label>
+                {{formData.travel.entrance}}
+            </span>
+
+            <span ng-if="formData.travel.entrance == 'none'">
+                <label id="travel-reason-label">Your reason for travelling to the UK is:</label>
+                {{formData.travel.reason}}
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            You have never been convicted of a criminal offence or cautioned by the police
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            You have never been refused entry to the UK or had restrictions imposed on your entry
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+           You have never had action or penalties taken against you for breaking UK customs laws or regulations
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="passport-number-label">Passport number</label>
+            {{formData.passport.passportNumber}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="passport-expiry-label">Passport expiry date</label>
+            {{formData.passport.passportExpiryDay}}/{{formData.passport.passportExpiryMonth}}/{{formData.passport.passportExpiryYear}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="passport-surname-label">Surname</label>
+            {{formData.passport.surname}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="passport-given-names-label">Given names</label>
+            {{formData.passport.givenNames}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+             <span ng-if="formData.passport.knownByOtherNames == 'yes'">
+                <label id="formData-passport-knownByOtherNames-label">You have been known by these previous names:</label> <br>
+                <span data-ng-repeat="i in [1,2,3,4,5,6,7,8,9]" data-ng-if="formData.passport.previousSurnames[i] || formData.passport.previousGivenNames[i]">
+                  {{formData.passport.previousSurnames[i]}} {{formData.passport.previousGivenNames[i]}} <br>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="dob-label">Date of birth</label>
+            {{formData.passport.passportDobDay}}/{{formData.passport.passportDobMonth}}/{{formData.passport.passportDobYear}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="passport-gender-label">Gender</label>
+            {{formData.travel.passport.gender}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label id="email-label">Email</label>
+            {{formData.email}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <br/>
+            <button data-ng-click="go('register.declaration', false)" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

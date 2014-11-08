@@ -1,5 +1,5 @@
-<div class="bs-docs-section ng-scope">
-    <h1 class="page-header">1. Travel</h1>
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 2 of 8</h1>
 
     <div class="form-group">
         <label id="nationality-label" for="nationality">What is your nationality as stated on your passport?</label>
@@ -36,10 +36,18 @@
                 data-ng-options="k as v for (k, v) in entrances">
         </select>
     </div>
+
+    <div class="form-group" data-ng-show="formData.travel.entrance == 'none'">
+        <label id="reason-label" for="reason">What is your reason for travel to the UK?</label>
+
+        <select xt-validate class="form-control" id="reason" name="reason" data-ng-model="formData.travel.reason" data-ng-required="formData.travel.entrance == 'none'"
+                data-ng-options="k as v for (k, v) in reasons">
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="validateTravel('register.offences')" class="btn btn-success">Continue</button>
+        </div>
+    </div>
 </div>
-
-<button type="submit" class="btn btn-success" data-ng-click="submit()">Submit</button>
-
-
-
-

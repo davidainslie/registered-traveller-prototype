@@ -3,7 +3,6 @@ package controllers
 import java.util.UUID
 import scala.concurrent.Future
 import scala.util.Try
-import play.api.Logger
 import play.api.libs.concurrent.Execution.Implicits.defaultContext // TODO execution context per "module" e.g. one for "controllers"
 import play.api.libs.json._
 import play.api.mvc.{Action, Controller}
@@ -40,6 +39,19 @@ trait Customers extends MongoController {
 
   def schemasCollection: JSONCollection = db.collection[JSONCollection]("schemas")
 
+  def invitationCodeCollection: JSONCollection = db.collection[JSONCollection]("invitationCodes")
+
+  def invitationCode(code: String) = Action.async { request =>
+    (for {
+      invitationCode <- invitationCodeCollection.find(Json.obj("_id" -> code)).one[JsValue]
+    } yield
+      invitationCode.fold { NotFound(Json.obj("error" -> "Invitation code was not found")) }
+                          { code => Ok(Json.obj("invitationCode" -> code)) }
+    ) recover {
+      case t: Throwable => BadRequest(Json.obj("response" -> s"Failed to acquire invitation code because of ${t.getMessage}"))
+    }
+  }
+
   /**
    * request.body is a JsValue.
    * There is an implicit Writes that turns this JsValue as a JsObject, so you can call insert() with this JsValue.
@@ -51,13 +63,9 @@ trait Customers extends MongoController {
         val id = UUID.randomUUID()
 
         customersCollection.save(Json.obj("id" -> id) ++ registration.as[JsObject]).map { _ =>
-          Logger.info(s"Registered a new customer with id: $id")
           Created(Json.obj("response" -> s"""Successfully registered with generated ID: $id""", "id" -> id))
         }
-      } getOrElse {
-        Logger.error(s"Registration failed because of invalid JSON: ${request.body}")
-        Future.successful(BadRequest(Json.obj("response" -> "Failed to save invalid registration")))
-      }
+      } getOrElse Future.successful(BadRequest(Json.obj("response" -> "Failed to save invalid registration")))
     }
   }
 
@@ -67,28 +75,21 @@ trait Customers extends MongoController {
       customer <- customersCollection.find(Json.obj("id" -> id)).one[JsValue]
     } yield {
       customer.fold { Ok(Json.obj("schema" -> schema)) }
-                    { c => Ok(Json.obj("data" -> c, "schema" -> schema)) }
+      { c => Ok(Json.obj("data" -> c, "schema" -> schema)) }
     }) recover {
-      case t: Throwable =>
-        Logger.error(s"Failed to aquire customer $id details: $t")
-        BadRequest(Json.obj("response" -> s"Failed to acquire your details because of ${t.getMessage}"))
+      case t: Throwable => BadRequest(Json.obj("response" -> s"Failed to acquire your details because of ${t.getMessage}"))
     }
   }
 
   def update = Action.async(parse.json) { request =>
-    println(s"UPDATING: ${request.body}")
-
     validateCustomer.flatMap {
       _(request.body).map { customer =>
         val id = (customer \ "id").as[String]
 
         customersCollection.save(customer).map { _ =>
-          Logger.info(s"Updated customer with id: $id")
           Ok(Json.obj("response" -> s"""Successful update"""))
         }
-      }.getOrElse {
-        Future.successful(BadRequest(Json.obj("_id" -> BSONObjectID.generate, "response" -> "Failed to update your details")))
-      }
+      } getOrElse Future.successful(BadRequest(Json.obj("_id" -> BSONObjectID.generate, "response" -> "Failed to update your details")))
     }
   }
 }

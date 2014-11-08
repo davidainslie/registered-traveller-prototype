@@ -1,0 +1,17 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 1 of 8</h1>
+
+    <div class="form-group">
+        <div>
+            <label id="invitation-code-label" for="invitation-code">Enter your invitation code</label>
+
+            <input xt-validate type="text" class="form-control" id="invitation-code" name="invitation-code" data-ng-model="formData.invitationCode" data-ng-minLength="12" data-ng-maxLength="13" required uppercase>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="validateInvitationCode('register.travel')" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

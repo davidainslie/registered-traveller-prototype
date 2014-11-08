@@ -1,0 +1,70 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 3 of 8</h1>
+
+    <div class="form-group">
+        <label id="restrictions-label" name="restrictions-label">Have you ever been refused entry to the UK or had restrictions imposed on your entry?</label>
+
+        <div>
+            <div class="radio-inline">
+                <label id="restrictions-0-label" name="restrictions-0-label" class="control-label" for="restrictions-0">
+                    <input xt-validate type="radio" id="restrictions-0" name="restrictions-0" value="yes" data-ng-model="formData.offences.restrictions" required>
+                    Yes
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="restrictions-1-label" name="restrictions-1-label" class="control-label" for="restrictions-1">
+                    <input xt-validate type="radio" id="restrictions-1" name="restrictions-1" value="no" data-ng-model="formData.offences.restrictions" required>
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label id="criminal-label" name="criminal-label">Have you ever been convicted of a criminal offence or cautioned by the police?</label>
+        <br>You don't need to tell us about motoring offences if you were just given a fine or penalty points.
+
+        <div>
+            <div class="radio-inline">
+                <label id="criminal-0-label" name="criminal-0-label" class="control-label" for="criminal-0">
+                    <input xt-validate type="radio" id="criminal-0" name="criminal-0" value="yes" data-ng-model="formData.offences.criminal" required>
+                    Yes
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="criminal-1-label" name="criminal-1-label" class="control-label" for="criminal-1">
+                    <input xt-validate type="radio" id="criminal-1" name="criminal-1" value="no" data-ng-model="formData.offences.criminal" required>
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label id="penalties-label">Have you ever had action or penalties taken against you for breaking UK customs laws or regulations?</label>
+
+        <div>
+            <div class="radio-inline">
+                <label id="penalties-0-label" name="penalties-0-label" class="control-label" for="penalties-0">
+                    <input xt-validate type="radio" id="penalties-0" name="penalties-0" value="yes" data-ng-model="formData.offences.penalties" required>
+                    Yes
+                </label>
+            </div>
+
+            <div class="radio-inline">
+                <label id="penalties-1-label" name="penalties-1-label" class="control-label" for="penalties-1">
+                    <input xt-validate type="radio" id="penalties-1" name="penalties-1" value="no" data-ng-model="formData.offences.penalties" required>
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="validateOffences('register.passport-number')" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

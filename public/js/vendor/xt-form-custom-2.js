@@ -126,7 +126,7 @@
             if (this.ngModel.$dirty && this.ngModel.$invalid) {
                 // DA 20th October 2014 - Radio's parents are marked with "xt-error"
                 if (this.attrs.type == "radio" || this.attrs.type == "checkbox" ) {
-                    this.element.parent().parent().parent().addClass('xt-error');
+                    this.element.closest(".form-group").addClass('xt-error');
                 } else {
                     this.element.addClass('xt-error');
                 }
@@ -148,7 +148,7 @@
 
                 // DA 20th October 2014 - Radio's parents are marked with "xt-error"
                 if (that.attrs.type == "radio" || that.attrs.type == "checkbox") {
-                    that.element.parent().parent().parent().removeClass('xt-error');
+                    that.element.closest(".form-group").removeClass('xt-error');
                 }
 
                 that.scope.$apply();

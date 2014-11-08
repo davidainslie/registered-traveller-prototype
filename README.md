@@ -15,6 +15,8 @@ Application built with the following (main) technologies:
 
 - Reactivemongo 0.10.5
 
+- Docker
+
 Introduction
 ------------
 
@@ -165,3 +167,16 @@ http://vschart.com/compare/play-framework/vs/node-js
 http://www.slideshare.net/mobile/brikis98/nodejs-vs-play-framework
 
 http://brikis98.blogspot.co.uk/2013/11/play-scala-and-iteratees-vs-nodejs.html
+
+Docker
+------
+
+http://www.scala-sbt.org/sbt-native-packager
+
+> $ activator
+> [registered-traveller-prototype] $ stage
+> [registered-traveller-prototype] $ ./target/universal/stage/bin/registered-traveller-prototype
+
+That last line will start this Play application.
+
+> [registered-traveller-prototype] $ universal:packageZipTarball

@@ -1,0 +1,56 @@
+<div class="bs-docs-section">
+    <h1 class="page-header">Section 4 of 8</h1>
+
+    <div class="form-group">
+        <div>
+            <label id="passport-number-label" name="passport-number-label" for="passport-number">Enter your passport number</label>
+
+            <input xt-validate type="text" class="form-control" id="passport-number" name="passport-number"
+                   data-ng-model="formData.passport.passportNumber" required data-ng-minLength="3"
+                   data-ng-maxLength="23" equals="{{formData.passport.passportNumberConfirm}}">
+        </div>
+
+        <div data-ng-hide="passportNumbersCorrelate()" class="text-danger">Password and password confirm must be the same</div>
+        <div data-ng-show="passportNumbersCorrelate()">&nbsp;</div>
+
+        <br/>
+
+        <label id="passport-number-confirm-label" name="passport-number-confirm-label" for="passport-number-confirm">Confirm your passport number</label>
+
+        <input xt-validate type="text" class="form-control" id="passport-number-confirm" name="passport-number-confirm"
+               data-ng-model="formData.passport.passportNumberConfirm" required data-ng-minLength="3"
+               data-ng-maxLength="23" equals="{{formData.passport.passportNumber}}">
+    </div>
+
+    <div class="form-group">
+        <label id="register-passport-expiry-label" name="register-passport-expiry-label">What is the expiry date of your passport?</label>
+
+        <br>
+
+        <label id="passport-expiry-day-label" name="passport-expiry-day-label" class="control-label" for="passport-expiry-day"> Day
+            <input xt-validate type="text" class="form-control" id="passport-expiry-day" name="passport-expiry-day" data-ng-model="formData.passport.passportExpiryDay"
+                   data-ng-length="2" class="ddinput" size="2" maxlength="2" required only-digits data-ng-minLength="2" key-focus
+                   data-ng-change="validatePassportExpiryDate(formData.passport.passportExpiryDay,formData.passport.passportExpiryMonth,formData.passport.passportExpiryYear)" />
+        </label>
+
+        <label id="passport-expiry-month-label" name="passport-expiry-month-label" class="control-label" for="passport-expiry-month"> Month
+            <input xt-validate type="text" class="form-control" id="passport-expiry-month" name="passport-expiry-month" data-ng-model="formData.passport.passportExpiryMonth"
+                   data-ng-length="2" class="ddinput" size="2" maxlength="2" required only-digits data-ng-minLength="2" key-focus
+                   data-ng-change="validatePassportExpiryDate(formData.passport.passportExpiryDay,formData.passport.passportExpiryMonth,formData.passport.passportExpiryYear)"  />
+        </label>
+
+        <label id="passport-expiry-year-label" name="passport-expiry-year-label" class="control-label" for="passport-expiry-year"> Year
+            <input xt-validate type="text" class="form-control" id="passport-expiry-year" name="passport-expiry-year" data-ng-model="formData.passport.passportExpiryYear"
+                   data-ng-length="2" class="yyyyinput" size="4" maxlength="4" required only-digits data-ng-minLength="4" key-focus
+                   ng-change="validatePassportExpiryDate(formData.passport.passportExpiryDay,formData.passport.passportExpiryMonth,formData.passport.passportExpiryYear)" />
+        </label>
+
+        <span data-ng-show="dateValidationError" class="text-danger">{{dateValidationError}}</span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button data-ng-click="validatePassportNumber('register.passport-names')" class="btn btn-success">Continue</button>
+        </div>
+    </div>
+</div>

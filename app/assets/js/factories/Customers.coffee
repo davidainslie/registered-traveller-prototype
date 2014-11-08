@@ -1,4 +1,9 @@
 @app.factory "Customers", ($resource) ->
+  invitationCode: (id) ->
+    console.debug "Customers.invitationCode: #{id}"
+    request = $resource "/api/invitation-codes/#{id}"
+    request.get().$promise
+
   register: (customer) ->
     console.debug "Customers.register: #{angular.toJson(customer, true)}"
     request = $resource "/api/customers"

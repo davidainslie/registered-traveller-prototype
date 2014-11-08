@@ -52,13 +52,37 @@
       url: "/home", templateUrl: "/assets/partials/home.html"
     })
     .state("register", {
-      url: "/register", templateUrl: "/assets/partials/register/register.html", controller: "RegisterController"
+        url: "/register", templateUrl: "/assets/partials/register/register.html", controller: "RegisterController"
     })
-    .state("register.eligibility", {
-      url: "/eligibility", templateUrl: "/assets/partials/register/register-eligibility.html"
+    .state("register.invitation-code", {
+      url: "/invitation-code", templateUrl: "/assets/partials/register/register-invitation-code.html"
     })
-    .state("register.particulars", {
-      url: "/particulars", templateUrl: "/assets/partials/register/register-particulars.html"
+    .state("register.travel", {
+      url: "/travel", templateUrl: "/assets/partials/register/register-travel.html"
+    })
+    .state("register.offences", {
+      url: "/offences", templateUrl: "/assets/partials/register/register-offences.html"
+    })
+    .state("register.passport-number", {
+      url: "/passport-number", templateUrl: "/assets/partials/register/register-passport-number.html"
+    })
+    .state("register.passport-names", {
+      url: "/passport-names", templateUrl: "/assets/partials/register/register-passport-names.html"
+    })
+    .state("register.passport-dob", {
+      url: "/passport-dob", templateUrl: "/assets/partials/register/register-passport-dob.html"
+    })
+    .state("register.email", {
+      url: "/email", templateUrl: "/assets/partials/register/register-email.html"
+    })
+    .state("register.summary", {
+      url: "/summary", templateUrl: "/assets/partials/register/register-summary.html"
+    })
+    .state("register.declaration", {
+      url: "/declaration", templateUrl: "/assets/partials/register/register-declaration.html"
+    })
+    .state("register.eligibility-fail", {
+      url: "/eligibility-fail", templateUrl: "/assets/partials/register/register-eligibility-fail.html"
     })
     .state("registered", {
       url: "/registered", templateUrl: "/assets/partials/registered/registered.html", controller: "RegisteredController"

@@ -7,6 +7,8 @@ import play.api.test._
 import json._
 
 class CustomersSpec extends PlaySpecification {
+  skipAll
+
   object Customers extends Controller with Customers
 
   "Customer" should {

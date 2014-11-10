@@ -1,4 +1,3 @@
-/*
 package acceptance
 
 import org.specs2.mutable.Specification
@@ -123,4 +122,4 @@ class RegisterSpec extends Specification with WebServerEmbedded with WebBrowserE
       browser pageSource() contains "Successfully registered"
     }
   }
-}*/
+}

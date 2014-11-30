@@ -1,8 +1,6 @@
 import com.typesafe.sbt.web.SbtWeb.autoImport._
 import com.typesafe.sbt.less.Import.LessKeys
 import play.PlayScala
-import com.typesafe.sbt.SbtNativePackager._
-import NativePackagerKeys._
 
 name := "registered-traveller-prototype"
 
@@ -68,8 +66,3 @@ excludeFilter in (Assets, LessKeys.less) := "_*.less"
 
 // For minified *.min.css files
 // LessKeys.compress := true
-
-maintainer in Docker := "David Ainslie <dainslie@gmail.com>"
-
-// exposing the play ports
-dockerExposedPorts in Docker := Seq(9000, 9443)

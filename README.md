@@ -182,4 +182,11 @@ That last line will start this Play application.
 > [registered-traveller-prototype] $ universal:packageZipTarball
 
 
-Host!!!
+Heroku
+------
+
+MongoLab
+
+To view documentation, the following takes you to https://devcenter.heroku.com/articles/mongolab
+
+> heroku addons:docs mongolab

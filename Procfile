@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/registered-traveller-prototype -Dhttp.port=$PORT -Dconfig.resource=conf/application.production.conf
+web: target/universal/stage/bin/registered-traveller-prototype -Dhttp.port=$PORT -Dconfig.resource=application.production.conf

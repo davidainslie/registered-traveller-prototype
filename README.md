@@ -190,3 +190,21 @@ MongoLab
 To view documentation, the following takes you to https://devcenter.heroku.com/articles/mongolab
 
 > heroku addons:docs mongolab
+
+To see the Mongodb connection details configured by Heroku:
+
+> heroku config | grep MONGOLAB_URI
+
+To list the application's (Heroku) config vars:
+
+> heroku config
+
+and for more details:
+
+> heroku pg
+
+The logs are presented via:
+
+> heroku logs
+
+where logging addons are available

@@ -8,7 +8,7 @@ organization := "kissthinker"
 
 version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.11.6"
 
 scalacOptions ++= Seq(
   "-feature",
@@ -66,3 +66,5 @@ excludeFilter in (Assets, LessKeys.less) := "_*.less"
 
 // For minified *.min.css files
 // LessKeys.compress := true
+
+fork in run := true
